@@ -18,12 +18,15 @@ body {
 
        
 	   	.container{
+			border:1px solid green;
+			position:relative;
 			margin-top : 0rem;		
                   	color:green;
 			display: flex;
 			flex-direction: column;
            	}
 		#notice{
+			position:relative;
 			color:red;
 			font-size:3rem;
 			margin-bottom:1.5rem;
@@ -81,14 +84,24 @@ body {
 
 
 		.monitor{
-		
-		background-image:url('hongikblue.jpg');
 		position:relative;
+		
+		}
+		.monitor:after{
+		top:12rem;
+		left:0;
+		display:block;
+		content:"";
+		width:100%;
+		height:59%;
+		opacity:0.5;
+		background-image:url('hongikblue.jpg');
+		position:absolute;
 		background-position : center center;
 		background-repeat:no-repeat;
-		flex-direction: row;
+		z-index:-1;
+		background-size:10rem;
 		}
-		
 	</style>
 	<script>
 		var init =0;
@@ -116,10 +129,10 @@ body {
 				document.getElementById('ha').innerHTML = init+dif;
 			}
 		}
-		
 	</script>
 </head>
 <body>
+
 <div class="monitor">
 	<div class="container">
 		<marquee id="notice" behavior="scroll" direction = "right" scrollamount="16">번호표가 없는 분들은 줄을 서실 수 없습니다.</marquee>
