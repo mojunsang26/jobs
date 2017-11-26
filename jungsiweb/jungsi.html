@@ -1,0 +1,144 @@
+﻿<!doctype>
+<html>
+<head>
+     	<meta charset="utf-8">
+     	<style>
+
+@font-face {
+  font-family: 'NanumBarunGothicBold';
+  src: url('NanumBarunGothicBold.eot?#iefix') format('embedded-opentype'),  url('NanumBarunGothicBold.woff') format('woff'), url('NanumBarunGothicBold.ttf')  format('truetype'), url('NanumBarunGothicBold.svg#NanumBarunGothicBold') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+body { 
+	font-family: 'NanumBarunGothicBold' !important; 
+	position:relative;
+		border:1px solid tomato;
+		}
+
+       
+	   	.container{
+			margin-top : 0rem;		
+                  	color:green;
+			display: flex;
+			flex-direction: column;
+           	}
+		#notice{
+			color:red;
+			font-size:3rem;
+			margin-bottom:1.5rem;
+		}
+
+		.waitnum{
+			position:relative;
+			height:40%;
+			width: 100%;
+			border:1px solid gray;
+			color:red;
+			display:flex;
+			flex-direction: row;
+			margin-left: 0px;
+			margin-right: 0px;
+			margin-top: 1rem;
+		}
+		.item{
+			top : 0px;
+			padding : 0px;
+			font-size : 15rem;
+			border:1px solid gray;
+			position:relative;
+			color : tomato;
+			margin-left : auto;
+			margin-right : auto;
+			text-align:center;
+		}
+		.item:nth-child(1){
+			margin-left:auto;
+		}
+		.item:nth-child(2){
+			position:relative;
+			
+			margin-left:0px;
+			margin-right:0px;
+		}
+		.item:nth-child(3){
+		margin-right:auto;
+		}	
+		.info{
+		font-size : 4rem;
+		border:1px solid gray;
+		text-align : center;
+		margin-top:3rem;
+		}
+		
+		.foot{
+		height:5rem;
+		font-size: 2rem;
+		border:1px solid gray;
+		text-align:center;
+		margin-top:0px;
+		}
+
+
+		.monitor{
+		
+		background-image:url('hongikblue.jpg');
+		position:relative;
+		background-position : center center;
+		background-repeat:no-repeat;
+		flex-direction: row;
+		}
+		
+	</style>
+	<script>
+		var init =0;
+		var dif=10;
+		window.addEventListener("keydown",checkKeyPress,false);		
+		function checkKeyPress(key){
+			if(key.keyCode =="38"){
+				init++;
+				document.getElementById('ho').innerHTML = init;
+				document.getElementById('ha').innerHTML = init+dif;
+			}
+			else if(key.keyCode =="40"){
+				init--;
+				document.getElementById('ho').innerHTML = init;
+				document.getElementById('ha').innerHTML = init+dif;
+			}
+			else if(key.keyCode =="37"){
+				dif--;
+				document.getElementById('ho').innerHTML = init;
+				document.getElementById('ha').innerHTML = init+dif;
+			}
+			else if(key.keyCode =="39"){
+				dif++;
+				document.getElementById('ho').innerHTML = init;
+				document.getElementById('ha').innerHTML = init+dif;
+			}
+		}
+		
+	</script>
+</head>
+<body>
+<div class="monitor">
+	<div class="container">
+		<marquee id="notice" behavior="scroll" direction = "right" scrollamount="16">번호표가 없는 분들은 줄을 서실 수 없습니다.</marquee>
+		<section class="waitnum">
+			<div class="item" id="ho">0
+			</div>
+			<div class = "item" id = "ho">~
+			</div>
+			<div class = "item" id="ha">1
+			</div>
+		</section>
+		<section class="info">
+				<div>번호표를 가지고 계신 분들은</div>
+				<div>안내에 따라 줄을 서 주시기 바랍니다.</div>
+		</section>
+		<footer class="foot">
+			<p>홍익대학교 입학처</p>
+		</footer>
+	</div>
+</div>
+</body>
+</html>
